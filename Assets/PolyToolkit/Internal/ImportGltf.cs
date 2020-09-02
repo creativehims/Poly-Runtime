@@ -1257,6 +1257,31 @@ namespace PolyToolkitInternal
                 result = destination;
                 return true;
             }
+            else if (accessor.type == "SCALAR" && accessor.componentType == GltfAccessorBase.ComponentType.UNSIGNED_INT)
+            {
+                var destination = new UInt32[eltRange.Size];
+                var newDes = new ushort[eltRange.Size];
+
+                //for (int i = 0; i < destination.Length; i++)
+                //{
+                //    var res = Convert.ToUInt16(destination[i]);
+                //    newDes[i] = res;
+                //}
+
+                fixed (void* destPtr = destination)
+                {
+                    ReadAccessorData(accessor, eltRange, sizeof(uint), (IntPtr)destPtr);
+                }
+
+                for (int i = 0; i < destination.Length; i++)
+                {
+                    var res = Convert.ToUInt16(destination[i]);
+                    newDes[i] = res;
+                }
+
+                result = newDes;
+                return true;
+            }
             else
             {
                 Debug.LogWarningFormat(

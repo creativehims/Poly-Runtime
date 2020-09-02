@@ -89,8 +89,9 @@ public class HelloPoly : MonoBehaviour
 
         // id working: 5vbJ5vildOq
         // id failing: 97yTneQB9uc (link: https://poly.google.com/view/97yTneQB9uc)
+        // 8gY8SLQBM1O
 
-        PolyApi.GetAsset("assets/5vbJ5vildOq", GetAssetCallback);
+        PolyApi.GetAsset("assets/0ptVcFhHelE", GetAssetCallback);
         statusText.text = "Requesting...";
     }
 

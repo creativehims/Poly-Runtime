@@ -177,7 +177,7 @@ public abstract class GltfBufferBase {
 
 public abstract class GltfAccessorBase {
   [Serializable] public enum ComponentType {
-    BYTE = 5120, UNSIGNED_BYTE = 5121, SHORT = 5122, UNSIGNED_SHORT = 5123, FLOAT = 5126
+    BYTE = 5120, UNSIGNED_BYTE = 5121, SHORT = 5122, UNSIGNED_SHORT = 5123, UNSIGNED_INT = 5125, FLOAT = 5126
   }
   public int byteOffset;
   public int byteStride;
